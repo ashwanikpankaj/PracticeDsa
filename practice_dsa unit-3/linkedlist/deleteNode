@@ -1,0 +1,27 @@
+
+const LinkedListNode = class {
+    constructor(nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+};
+
+// Complete the function below
+
+function deleteNode(head, position) {
+  if(head == null){
+      return null
+  }
+  let curr = null;
+  let prev = null;
+  let count = 0
+  for(curr = head; curr!= null; prev = curr, curr = curr.next){
+      if(position == count){
+          prev.next = curr.next
+      }
+      count++;
+      
+  }
+   return head
+}
+
